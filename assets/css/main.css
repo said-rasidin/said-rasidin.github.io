@@ -1,6 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import "fontawesome-all.min.css";
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
 /*
 	Read Only by HTML5 UP
@@ -3314,4 +3313,372 @@ input, select, textarea {
 				padding: 0;
 			}
 
+	}
+
+/* Professional Readability Overrides */
+
+	:root {
+		--bg-page: #eef3f8;
+		--surface: #ffffff;
+		--surface-soft: #f8fbff;
+		--text-main: #1f2937;
+		--text-muted: #4b5563;
+		--border-soft: #d9e3ee;
+		--brand-500: #0f766e;
+		--brand-600: #0b635d;
+		--brand-700: #0a5250;
+		--sidebar-start: #0f2740;
+		--sidebar-end: #19466f;
+		--panel-desktop: 20.5em;
+		--panel-xlarge: 19.5em;
+		--panel-large: 18.5em;
+		--panel-tablet: 18em;
+		--panel-mobile: 15.5em;
+	}
+
+	body {
+		background:
+			radial-gradient(circle at 10% 15%, rgba(15, 118, 110, 0.08), transparent 30%),
+			radial-gradient(circle at 80% 25%, rgba(25, 70, 111, 0.08), transparent 32%),
+			var(--bg-page);
+	}
+
+	body, input, select, textarea {
+		color: var(--text-muted);
+		font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: var(--text-main);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+
+	p {
+		margin: 0 0 1.4em 0;
+		max-width: 76ch;
+	}
+
+	a {
+		border-bottom-color: #c3d3e5;
+		color: var(--brand-700);
+	}
+
+		a:hover {
+			color: var(--brand-500) !important;
+		}
+
+	#wrapper {
+		background: transparent;
+		padding-right: var(--panel-desktop);
+	}
+
+	#main > section {
+		border-top: solid 1px var(--border-soft);
+	}
+
+		#main > section > .container {
+			max-width: 980px;
+			padding: 4.5em 1.75em 3em 1.75em;
+		}
+
+	#main > section h3 {
+		display: inline-block;
+		margin-bottom: 1.2em;
+		padding-bottom: 0.35em;
+		position: relative;
+	}
+
+		#main > section h3:after {
+			background: var(--brand-500);
+			border-radius: 999px;
+			bottom: 0;
+			content: '';
+			height: 3px;
+			left: 0;
+			position: absolute;
+			width: 52px;
+		}
+
+	#header {
+		background: linear-gradient(170deg, var(--sidebar-start), var(--sidebar-end));
+		box-shadow: -14px 0 30px rgba(15, 39, 64, 0.3);
+		color: #d8e6f5;
+		width: var(--panel-desktop);
+	}
+
+		#header > header {
+			padding: 2.4em 2em 1.8em 2em;
+		}
+
+		#header > header .avatar {
+			border: 3px solid rgba(255, 255, 255, 0.5);
+			box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+			margin-bottom: 1.5em;
+			width: 7em;
+		}
+
+		#header > header p {
+			color: #d3dfed;
+			font-style: normal;
+			font-weight: 500;
+		}
+
+		#header > nav ul li {
+			border-top: solid 1px rgba(216, 230, 245, 0.22);
+		}
+
+			#header > nav ul li a {
+				font-weight: 600;
+				letter-spacing: 0.015em;
+				padding: 0.8em 0;
+			}
+
+				#header > nav ul li a.active {
+					background: #ffffff;
+					color: var(--brand-600) !important;
+				}
+
+				#header > nav ul li a:hover {
+					background: rgba(255, 255, 255, 0.12);
+				}
+
+				#header > nav ul li a.active:hover {
+					background: #ffffff;
+				}
+
+		#header > footer .icons li a {
+			align-items: center;
+			background: rgba(255, 255, 255, 0.1);
+			border: 0;
+			border-radius: 999px;
+			display: inline-flex;
+			height: 2.2em;
+			justify-content: center;
+			width: 2.2em;
+		}
+
+			#header > footer .icons li {
+				padding: 0 0.45em 0.45em 0;
+			}
+
+			#header > footer .icons li a:hover {
+				background: #ffffff;
+				color: #0f2f4d !important;
+			}
+
+	.button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		border-radius: 8px;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+	}
+
+	.button.primary,
+	input[type="submit"].primary,
+	input[type="reset"].primary,
+	input[type="button"].primary {
+		background-color: var(--brand-500);
+	}
+
+		.button.primary:hover,
+		input[type="submit"].primary:hover,
+		input[type="reset"].primary:hover,
+		input[type="button"].primary:hover {
+			background-color: var(--brand-600);
+		}
+
+	ul.feature-icons {
+		display: grid;
+		gap: 0.95em 1.2em;
+		grid-template-columns: repeat(2, minmax(220px, 1fr));
+	}
+
+		ul.feature-icons li {
+			background: var(--surface-soft);
+			border: 1px solid var(--border-soft);
+			border-radius: 12px;
+			margin: 0;
+			min-height: 4.1em;
+			padding: 0.82em 0.9em 0.82em 3.6em;
+			width: auto;
+		}
+
+			ul.feature-icons li:before {
+				background: var(--brand-500);
+				height: 2.2em;
+				left: 0.75em;
+				line-height: 2.2em;
+				top: 0.72em;
+				width: 2.2em;
+			}
+
+	.experience-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.05em;
+	}
+
+	.experience-item {
+		background: var(--surface);
+		border: 1px solid var(--border-soft);
+		border-radius: 14px;
+		box-shadow: 0 10px 24px rgba(15, 39, 64, 0.06);
+		padding: 1.2em 1.3em 0.7em 1.3em;
+	}
+
+		.experience-item header {
+			margin-bottom: 0.55em;
+		}
+
+		.experience-item h4 {
+			margin-bottom: 0.2em;
+		}
+
+		.experience-item .experience-org {
+			font-weight: 600;
+			margin: 0;
+		}
+
+			.experience-item .experience-org a {
+				border-bottom: 0;
+			}
+
+		.experience-item .experience-meta {
+			color: #637186;
+			font-size: 0.95em;
+			margin: 0.15em 0 0 0;
+		}
+
+		.experience-item ul {
+			list-style: disc;
+			margin: 0.75em 0 0.45em 1.05em;
+			padding-left: 0.1em;
+		}
+
+			.experience-item ul li {
+				margin-bottom: 0.55em;
+			}
+
+	.features article {
+		background: var(--surface);
+		border: 1px solid var(--border-soft);
+		border-radius: 14px;
+		box-shadow: 0 8px 20px rgba(15, 39, 64, 0.05);
+		margin-bottom: 1.2em;
+		padding: 1.35em;
+	}
+
+		.features article:first-child {
+			border-top: solid 1px var(--border-soft);
+			padding-top: 1.35em;
+		}
+
+		.features article .image {
+			padding-right: 1.35em;
+			width: 40%;
+		}
+
+			.features article .image img {
+				border-radius: 10px;
+				box-shadow: 0 8px 18px rgba(15, 39, 64, 0.16);
+			}
+
+		.features article .inner {
+			width: 58%;
+		}
+
+		.features article .inner p {
+			margin-bottom: 0;
+		}
+
+	@media screen and (max-width: 1680px) {
+		#header {
+			width: var(--panel-xlarge);
+		}
+
+		#wrapper {
+			padding-right: var(--panel-xlarge);
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		#header {
+			width: var(--panel-large);
+		}
+
+		#wrapper {
+			padding-right: var(--panel-large);
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		#header {
+			width: var(--panel-tablet);
+			-moz-transform: translateX(var(--panel-tablet));
+			-webkit-transform: translateX(var(--panel-tablet));
+			-ms-transform: translateX(var(--panel-tablet));
+			transform: translateX(var(--panel-tablet));
+		}
+
+		#wrapper {
+			padding-right: 0;
+		}
+
+		body.header-visible #wrapper,
+		body.header-visible #titleBar {
+			-moz-transform: translateX(calc(-1 * var(--panel-tablet)));
+			-webkit-transform: translateX(calc(-1 * var(--panel-tablet)));
+			-ms-transform: translateX(calc(-1 * var(--panel-tablet)));
+			transform: translateX(calc(-1 * var(--panel-tablet)));
+		}
+
+		#main > section > .container {
+			padding: 3.2em 1.1em 2em 1.1em;
+		}
+
+		.features article .image,
+		.features article .inner {
+			display: block;
+			width: 100%;
+		}
+
+		.features article .image {
+			margin: 0 0 1em 0;
+			padding-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		body, input, select, textarea {
+			font-size: 15px;
+		}
+
+		#header {
+			width: var(--panel-mobile);
+			-moz-transform: translateX(var(--panel-mobile));
+			-webkit-transform: translateX(var(--panel-mobile));
+			-ms-transform: translateX(var(--panel-mobile));
+			transform: translateX(var(--panel-mobile));
+		}
+
+		body.header-visible #wrapper,
+		body.header-visible #titleBar {
+			-moz-transform: translateX(calc(-1 * var(--panel-mobile)));
+			-webkit-transform: translateX(calc(-1 * var(--panel-mobile)));
+			-ms-transform: translateX(calc(-1 * var(--panel-mobile)));
+			transform: translateX(calc(-1 * var(--panel-mobile)));
+		}
+
+		ul.feature-icons {
+			grid-template-columns: 1fr;
+		}
+
+		.experience-item {
+			padding: 1em 1em 0.6em 1em;
+		}
 	}
