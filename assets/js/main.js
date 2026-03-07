@@ -11,7 +11,41 @@
 		$header = $('#header'),
 		$titleBar = null,
 		$nav = $('#nav'),
-		$wrapper = $('#wrapper');
+		$wrapper = $('#wrapper'),
+		$toggle = null,
+		headerWasVisible = $body.hasClass('header-visible');
+
+	function syncHeaderA11yState() {
+
+		var isMobile = breakpoints.active('<=medium'),
+			isVisible = $body.hasClass('header-visible');
+
+		if ($toggle) {
+			$toggle.attr('aria-expanded', isVisible ? 'true' : 'false');
+			$toggle.attr('aria-label', isVisible ? 'Close navigation menu' : 'Open navigation menu');
+		}
+
+		if (isMobile && !isVisible) {
+			$header.attr('aria-hidden', 'true').attr('inert', '');
+		}
+		else {
+			$header.attr('aria-hidden', 'false').removeAttr('inert');
+		}
+
+		if (isMobile && isVisible && !headerWasVisible) {
+			var $focusTarget = $nav.find('a.active').first();
+
+			if ($focusTarget.length === 0)
+				$focusTarget = $nav.find('a').first();
+
+			if ($focusTarget.length > 0)
+				$focusTarget.trigger('focus');
+		}
+		else if (isMobile && !isVisible && headerWasVisible && $toggle)
+			$toggle.trigger('focus');
+
+		headerWasVisible = isVisible;
+	}
 
 	// Breakpoints.
 		breakpoints({
@@ -124,17 +158,30 @@
 		// Title Bar.
 			$titleBar = $(
 				'<div id="titleBar">' +
-					'<a href="#header" class="toggle"></a>' +
+					'<button type="button" class="toggle" aria-controls="header" aria-expanded="false" aria-label="Open navigation menu"></button>' +
 					'<span class="title">' + $('#logo').html() + '</span>' +
 				'</div>'
 			)
 				.appendTo($body);
+
+			$toggle = $titleBar.find('.toggle');
+
+			$toggle.on('click', function(event) {
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				$body.toggleClass('header-visible');
+				syncHeaderA11yState();
+
+			});
 
 		// Panel.
 			$header
 				.panel({
 					delay: 500,
 					hideOnClick: true,
+					hideOnEscape: true,
 					hideOnSwipe: true,
 					resetScroll: true,
 					resetForms: true,
@@ -142,6 +189,15 @@
 					target: $body,
 					visibleClass: 'header-visible'
 				});
+
+		if (window.MutationObserver)
+			(new MutationObserver(syncHeaderA11yState)).observe($body.get(0), {
+				attributes: true,
+				attributeFilter: ['class']
+			});
+
+		$window.on('resize', syncHeaderA11yState);
+		syncHeaderA11yState();
 
 	// Scrolly.
 		$('.scrolly').scrolly({

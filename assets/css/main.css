@@ -3052,15 +3052,22 @@ input, select, textarea {
 					}
 
 				#titleBar .toggle {
+					-webkit-appearance: none;
+					appearance: none;
+					background: transparent;
 					text-decoration: none;
+					cursor: pointer;
 					height: 4em;
 					position: absolute;
 					top: 0;
 					width: 6em;
 					border: 0;
-					outline: 0;
 					right: 0;
 				}
+
+					#titleBar .toggle:focus {
+						outline: none;
+					}
 
 					#titleBar .toggle:before {
 						-moz-osx-font-smoothing: grayscale;
@@ -3088,6 +3095,14 @@ input, select, textarea {
 						top: 0;
 						width: 64px;
 						right: 0;
+					}
+
+					#titleBar .toggle:hover:before {
+						background: #3fb995;
+					}
+
+					#titleBar .toggle:focus-visible:before {
+						box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 6px rgba(74, 202, 168, 0.65);
 					}
 
 			body.header-visible #wrapper, body.header-visible #titleBar {
@@ -3518,18 +3533,45 @@ input, select, textarea {
 			}
 
 	.experience-list {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 1.05em;
+		gap: 1.2em;
+		padding-left: 3.4em;
 	}
 
+		.experience-list:before {
+			background: linear-gradient(to bottom, var(--brand-500), #cbd8e6);
+			border-radius: 999px;
+			bottom: 1.2em;
+			content: '';
+			left: 1.25em;
+			position: absolute;
+			top: 1.2em;
+			width: 2px;
+		}
+
 	.experience-item {
+		position: relative;
 		background: var(--surface);
 		border: 1px solid var(--border-soft);
 		border-radius: 14px;
 		box-shadow: 0 10px 24px rgba(15, 39, 64, 0.06);
 		padding: 1.2em 1.3em 0.7em 1.3em;
 	}
+
+		.experience-item:before {
+			background: var(--brand-500);
+			border: 4px solid #ffffff;
+			border-radius: 50%;
+			box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+			content: '';
+			height: 1rem;
+			left: -2.65em;
+			position: absolute;
+			top: 1.25em;
+			width: 1rem;
+		}
 
 		.experience-item header {
 			margin-bottom: 0.55em;
@@ -3549,9 +3591,16 @@ input, select, textarea {
 			}
 
 		.experience-item .experience-meta {
-			color: #637186;
-			font-size: 0.95em;
-			margin: 0.15em 0 0 0;
+			background: #eef7f6;
+			border: 1px solid rgba(15, 118, 110, 0.14);
+			border-radius: 999px;
+			color: var(--brand-700);
+			display: inline-block;
+			font-size: 0.82em;
+			font-weight: 600;
+			letter-spacing: 0.01em;
+			margin: 0.45em 0 0 0;
+			padding: 0.3em 0.8em;
 		}
 
 		.experience-item ul {
@@ -3680,5 +3729,21 @@ input, select, textarea {
 
 		.experience-item {
 			padding: 1em 1em 0.6em 1em;
+		}
+
+		.experience-list {
+			gap: 1em;
+			padding-left: 2.5em;
+		}
+
+			.experience-list:before {
+				left: 0.9em;
+				top: 1em;
+				bottom: 1em;
+			}
+
+		.experience-item:before {
+			left: -1.95em;
+			top: 1.05em;
 		}
 	}
