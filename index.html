@@ -1,25 +1,25 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-
-		<title>Said Rasidin</title>
+		<title>Said Rasidin | Senior Machine Learning Engineer</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Said Rasidin - Senior Machine Learning Engineer building production AI systems, recommendation engines, and intelligent automation pipelines.">
+		<meta name="description" content="Said Rasidin - Senior Machine Learning Engineer building production AI systems, recommendation engines, agentic AI workflows, and data automation platforms.">
 		<link rel="canonical" href="https://said-rasidin.github.io/">
 		<meta property="og:title" content="Said Rasidin - Senior Machine Learning Engineer">
 		<meta property="og:description" content="Portfolio, experience, projects, certifications, and CV of Said Rasidin.">
 		<meta property="og:url" content="https://said-rasidin.github.io/">
 		<meta property="og:site_name" content="Said Rasidin">
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://said-rasidin.github.io/images/profile.jpg">
+		<meta property="og:image" content="https://said-rasidin.github.io/images/portrait-teneleven.jpeg">
 		<meta property="og:image:alt" content="Portrait of Said Rasidin">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Said Rasidin - Senior Machine Learning Engineer">
 		<meta name="twitter:description" content="Portfolio, experience, projects, certifications, and CV of Said Rasidin.">
-		<meta name="twitter:image" content="https://said-rasidin.github.io/images/profile.jpg">
+		<meta name="twitter:image" content="https://said-rasidin.github.io/images/portrait-teneleven.jpeg">
 		<meta name="twitter:image:alt" content="Portrait of Said Rasidin">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="assets/css/main.css">
 		<link href="images/favicon.ico" rel="icon" type="image/x-icon">
 		<script type="text/javascript">
@@ -30,311 +30,195 @@
 			})(window, document, "clarity", "script", "voakzoy3hd");
 		</script>
 	</head>
-	<body class="is-preload">
+	<body>
+		<div id="portfolio-app" v-cloak>
+			<div class="scroll-progress" aria-hidden="true"><span :style="{ width: scrollProgress + '%' }"></span></div>
+			<button class="mobile-menu-toggle icon solid fa-bars" type="button" :aria-expanded="menuOpen.toString()" aria-controls="header" @click="menuOpen = !menuOpen">
+				<span class="label">Menu</span>
+			</button>
 
-			<section id="header">
+			<aside id="header" :class="{ 'is-open': menuOpen }">
 				<header>
-					<span class="image avatar"><img src="images/profile.jpg" alt="Said Rasidin profile photo"></span>
-					<h1 id="logo"><a href="#">Said Rasidin</a></h1>
+					<span class="image avatar"><img src="images/portrait-teneleven.jpeg" alt="Said Rasidin profile photo"></span>
+					<p class="eyebrow">Portfolio</p>
+					<h1 id="logo"><a href="#about" @click="closeMenu">Said Rasidin</a></h1>
 					<p>Senior Machine Learning Engineer</p>
 				</header>
+
 				<nav id="nav" aria-label="Primary">
 					<ul>
-						<li><a href="#about" class="active">About</a></li>
-						<li><a href="#experience">Experience</a></li>
-						<li><a href="#skills">Skills</a></li>
-						<li><a href="#education" >Education</a></li>
-						<li><a href="#certifications">Certifications</a></li>
-						<li><a href="#project">Projects</a></li>
+						<li v-for="item in navItems" :key="item.id">
+							<a :href="'#' + item.id" :class="{ active: activeSection === item.id }" @click="closeMenu">{{ item.label }}</a>
+						</li>
 					</ul>
 				</nav>
+
 				<footer>
 					<ul class="icons">
-						<li><a  target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/said-rasidin/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a  target="_blank" rel="noopener noreferrer" href="https://www.github.com/said-rasidin/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a  target="_blank" rel="noopener noreferrer" href="https://said-rasidin.medium.com/" class="icon brands fa-medium"><span class="label">Medium</span></a></li>
-						<li><a target="_blank" rel="noopener noreferrer" href="Rasid_CV_2026.pdf" class="icon solid fa-file-pdf"><span class="label">CV</span></a></li>
-						<li><a href="mailto:said-rasidin@pm.me" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li v-for="link in socialLinks" :key="link.label">
+							<a :target="link.external ? '_blank' : null" rel="noopener noreferrer" :href="link.href" :class="link.icon">
+								<span class="label">{{ link.label }}</span>
+							</a>
+						</li>
 					</ul>
 				</footer>
-			</section>
+			</aside>
+
+			<div class="site-scrim" v-if="menuOpen" @click="closeMenu"></div>
 
 			<div id="wrapper">
-
-					<main id="main">
-
-							<section id="about">
-								<div class="container">
-									<header class="major">
-										<h3>About Me</h3>
-									</header>
-									<p>Machine Learning Engineer with experience building scalable AI systems, recommendation engines,
-										forecasting models, and intelligent automation pipelines.<br><br>
-										Skilled in Python, PyTorch, Azure AI, Microsoft Fabric, vector databases, and modern data architectures.
-										Certified Google Professional ML Engineer, Azure AI Engineer Associate, and Databricks Generative AI Engineer Associate, focused on production-ready solutions with measurable impact.<br><br>
-										Stack: Python, SQL, PyTorch, FastAPI, Airflow, Azure AI, Microsoft Fabric, GCP, AWS<br><br>
-										Read my writing on <a target="_blank" rel="noopener noreferrer" href="https://said-rasidin.medium.com/">Medium</a>.
-									</p>
-									<ul class="actions">
-										<li><a target="_blank" rel="noopener noreferrer" href="Rasid_CV_2026.pdf" class="button primary">Open CV</a></li>
-										<li><a href="Rasid_CV_2026.pdf" download class="button">Download CV</a></li>
-									</ul>
-									<p><small>Last updated: February 2026</small></p>
-								</div>
-							</section>
-
-						<section id="experience">
-							<div class="container">
-								<h3>Experience</h3>
-								<div class="experience-list">
-									<article class="experience-item">
-										<header>
-											<h4>Senior Machine Learning Engineer</h4>
-											<p class="experience-org"><a href="https://www.teneleven.ai/">TenEleven.ai</a></p>
-											<p class="experience-meta">July 2025 - Present | Jakarta, Indonesia</p>
-										</header>
-										<ul>
-											<li>Architected and delivered production-grade AI solutions for conversational AI, agentic systems, and data-driven applications.</li>
-											<li>Designed and implemented conversational AI platforms with tool calling, API orchestration, state management, and automated workflows.</li>
-											<li>Built and evaluated PoCs such as chat-with-data systems, agentic DevOps assistants, voice-enabled agents, and conversational analytics.</li>
-											<li>Created advanced agentic AI architectures including Agentic RAG, autonomous task-oriented agents, and multi-step reasoning pipelines.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Data Scientist</h4>
-											<p class="experience-org"><a href="https://www.tribunnews.com/">Tribun Network - KG Media</a></p>
-											<p class="experience-meta">August 2024 - June 2025 | Jakarta, Indonesia</p>
-										</header>
-										<ul>
-											<li>Developed personalized advertorial boosting strategies to increase page views and optimize content delivery.</li>
-											<li>Researched and implemented hierarchical text classification (HiDEC) with PyTorch for news content categorization.</li>
-											<li>Leveraged LLMs for data conditioning and labeling, improving data quality and reducing manual effort.</li>
-											<li>Built recommendation and search capabilities, including tags/articles recommendation and internal image search.</li>
-											<li>Optimized recommendation delivery by integrating Qdrant and caching, reducing CPU usage from 95% to 20%.</li>
-											<li>Streamlined the entity extraction pipeline using BERT, reducing daily processing time from 2 hours to 15 minutes.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Data Scientist</h4>
-											<p class="experience-org"><a href="https://www.praktis.co">Praktis.co</a></p>
-											<p class="experience-meta">October 2022 - July 2024 | Jakarta, Indonesia</p>
-										</header>
-										<ul>
-											<li>Built forecasting models with Vertex AI AutoML for rapid ML system development.</li>
-											<li>Implemented text similarity search using embeddings and cosine similarity to align product categories across marketplaces.</li>
-											<li>Collaborated with academic experts to formulate production scheduling optimization models using Pyomo and Lingo, and developed heuristic algorithms in Python.</li>
-											<li>Developed Min-Max inventory monitoring logic and visualized it in Metabase to improve inventory management and out-of-stock prevention.</li>
-											<li>Pioneered advanced demand forecasting models in Python orchestrated by Airflow for batch inference.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Data Analyst</h4>
-											<p class="experience-org"><a href="https://www.praktis.co">Praktis.co</a></p>
-											<p class="experience-meta">November 2021 - October 2022 | Jakarta, Indonesia</p>
-										</header>
-										<ul>
-											<li>Developed forecasting models for demand prediction for thousands of products at the SKU level.</li>
-											<li>Cleaned and migrated reporting dashboard data into a data warehouse to reduce response times.</li>
-											<li>Conducted ad-hoc analyses for business decision support.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Data Science Trainee</h4>
-											<p class="experience-org"><a href="https://smartcity.jakarta.go.id/">Jakarta Smart City</a></p>
-											<p class="experience-meta">August 2021 - October 2021 | Remote</p>
-										</header>
-										<ul>
-											<li>Researched few-shot learning methods to categorize CRM report images and improve flexibility for new classes.</li>
-											<li>Deployed a prototype model for web app and prediction API serving.</li>
-											<li>Contributed insights on practical big-data implementation across public service sectors.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Thesis Project (Research Intern)</h4>
-											<p class="experience-org"><a href="https://mgi.esdm.go.id/">Pusat Penelitian dan Pengembangan Geologi Kelautan (PPPGL)</a></p>
-											<p class="experience-meta">August 2019 - October 2019 | Bandung, Indonesia</p>
-										</header>
-										<ul>
-											<li>Conducted seismic data pre-processing, processing, and imaging for marine geology research.</li>
-											<li>Applied multiple attenuation methods including SRME and Radon Transform for clearer seismic imaging.</li>
-											<li>Performed geological structure interpretation beneath the Seram Sea area.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Geophysicist Intern</h4>
-											<p class="experience-org"><a href="https://www.timah.com">PT TIMAH TBK</a></p>
-											<p class="experience-meta">September 2018 - October 2018 | Pangkal Pinang, Indonesia</p>
-										</header>
-										<ul>
-											<li>Executed magnetic and geoelectrical survey data acquisition in potential tin mineralization areas.</li>
-											<li>Processed geophysical data to produce geomagnetic anomaly maps for exploration support.</li>
-											<li>Interpreted anomaly maps to delineate potential primary tin mineralization targets.</li>
-										</ul>
-									</article>
-
-									<article class="experience-item">
-										<header>
-											<h4>Teaching Assistant</h4>
-											<p class="experience-org"><a href="https://www.unja.ac.id">Universitas Jambi</a></p>
-											<p class="experience-meta">January 2018 - April 2018 | Jambi, Indonesia</p>
-										</header>
-										<ul>
-											<li>Taught sophomore geophysics students seismic refraction fundamentals.</li>
-											<li>Guided survey design using a 24-channel seismograph.</li>
-											<li>Mentored students on seismic refraction data processing for subsurface imaging.</li>
-										</ul>
-									</article>
-								</div>
-							</div>
-						</section>
-
-						<section id="education">
-							<div class="container">
-								<h3>Education</h3>
-								<ul class="feature-icons">
-									<li class="icon solid fa-university"><a target="_blank" rel="noopener noreferrer" href="https://www.unja.ac.id">Universitas Jambi</a></li>
-								</ul>
-								<p><i>Bachelor of Engineering in Geophysical Engineering (Sarjana Teknik)<br>
-									Aug 2015 - Jan 2020 | Jambi, Indonesia<br>
-									Thesis: Seismic Pre-Stack and Post-Stack Kirchhoff Time Migration</i></p>
-							</div>
-						</section>
-
-						<section id="certifications">
-							<div class="container">
-								<h3>Certifications</h3>
-								<ul class="feature-icons">
-									<li class="icon solid fa-certificate"><a target="_blank" rel="noopener noreferrer" href="https://www.credly.com/badges/a7b42d22-eff8-41ab-bac9-a8720667dbcd/linked_in_profile">Google Professional Machine Learning Engineer (GCP)</a>, Sep 2024 - Sep 2026</li>
-									<li class="icon solid fa-certificate"><a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/users/saidrasidin-7624/credentials/9f0ce9afb7607975?ref=https%3A%2F%2Fwww.linkedin.com%2F">Azure AI Engineer Associate</a>, September 2025 - October 2026</li>
-									<li class="icon solid fa-certificate"><a target="_blank" rel="noopener noreferrer" href="https://credentials.databricks.com/9b357875-3e14-41ca-9607-dd5caefb434b">Databricks Certified Generative AI Engineer Associate</a>, April 2026 - April 2028</li>
-								</ul>
-							</div>
-						</section>
-
-						<section id="skills">
-							<div class="container">
-								<h3>Skills</h3>
-								<ul class="feature-icons">
-									<li class="icon solid fa-code">Programming: Python, SQL, Git</li>
-									<li class="icon solid fa-microchip">ML/AI: Machine Learning, Deep Learning, PyTorch</li>
-									<li class="icon solid fa-cogs">Data &amp; Automation: Airflow, BigQuery, Metabase</li>
-									<li class="icon solid fa-server">Backend: FastAPI, Docker</li>
-									<li class="icon solid fa-cloud">GCP: Vertex AI, BigQuery, Cloud Run, GCS</li>
-									<li class="icon solid fa-cloud-upload-alt">AWS: EC2, Athena, S3, QuickSight, MWAA</li>
-									<li class="icon solid fa-project-diagram">Optimization: Pyomo, Lingo</li>
-									<li class="icon solid fa-chart-line">Comfortable with: Automation, Optimization, Data Analytics</li>
-									<li class="icon solid fa-language">Languages: Indonesian, English (C1 Advanced)</li>
-									<li class="icon solid fa-comments">Soft Skills: Self-starter, can-do attitude, curiosity, innovation, clear communication</li>
-								</ul>
-							</div>
-						</section>
-
-							<section id="project">
-								<div class="container">
-									<h3>Personal Projects</h3>
-									<p>Selected personal projects.</p>
-									<div class="features">
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://medium.com/jakartasmartcity/few-shot-image-classification-with-jaki-report-images-68128813f003"
-											class="image"><img src="images/few-shot-jsc.png" alt="Few-shot image classification project preview"></a>
-											<div class="inner">
-												<h4>Few-Shot Image Classification With JAKI Report Images</h4>
-												<p>Built a few-shot image classification approach for JAKI report images to reduce manual categorization and provide category recommendations for end users.</p>
-											</div>
-										</article>
-
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://medium.com/analytics-vidhya/random-forest-and-ann-model-with-oversampling-data-b7adde23e55f" class="image"><img src="images/RF-ANN.png" alt="Random Forest and ANN project preview"></a>
-											<div class="inner">
-												<h4>Random Forest and ANN Model with Oversampling Data</h4>
-												<p>Compared Random Forest and ANN models on imbalanced data using SMOTE to evaluate how oversampling affects classification performance.</p>
-											</div>
-										</article>
-
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://medium.com/@saidr567/drone-aerial-view-segmentation-44046ff003b5" class="image"><img src="images/drone_project.png" alt="Drone aerial segmentation project preview"></a>
-											<div class="inner">
-												<h4>Drone Aerial View Segmentation</h4>
-												<p>Explored high-resolution aerial image segmentation for drone imagery, addressing bird's-eye-view challenges and transfer learning limits from standard vision datasets.</p>
-											</div>
-										</article>
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://medium.com/analytics-vidhya/semantic-segmentation-in-seismic-images-70cde2175f01" class="image"><img src="images/seismic_project.png" alt="Semantic segmentation in seismic images preview"></a>
-											<div class="inner">
-												<h4>Semantic Segmentation in Seismic Images</h4>
-												<p>Applied U-Net with ResNet backbones to delineate salt bodies in seismic images and support more accurate subsurface interpretation.</p>
-											</div>
-										</article>
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://medium.com/@saidr567/mineral-klasifikasi-menggunakan-deep-learning-373cea77694b" class="image"><img src="images/mineral_project.png" alt="Mineral image classification project preview"></a>
-											<div class="inner">
-												<h4>Mineral Image Classification</h4>
-												<p>Trained a deep learning model to classify seven mineral classes using image data and evaluated its robustness across varied samples.</p>
-											</div>
-										</article>
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://medium.com/jovianml/covid-19-early-detection-from-x-ray-images-aided-by-ai-e4642d514323" class="image"><img src="images/covid19_project.png" alt="COVID-19 X-ray detection project preview"></a>
-											<div class="inner">
-												<h4>Covid-19 Early Detection from X-ray Images Aided by AI</h4>
-												<p>Built an AI-assisted X-ray classification workflow for faster COVID-19 screening in high-volume testing scenarios.</p>
-											</div>
-										</article>
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://github.com/said-rasidin/ML_Project/tree/master/Sentiment%20Analysis%20Covid-19" class="image"><img src="images/sentiment_project.png" alt="Sentiment analysis project preview"></a>
-											<div class="inner">
-												<h4>Sentiment Analysis COVID-19</h4>
-												<p>Built a sentiment classification pipeline for COVID-19-related tweets to analyze public opinion trends from social media data.</p>
-											</div>
-										</article>
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://github.com/said-rasidin/ML_Project/tree/master/Text%20Extraction" class="image"><img src="images/text_sum_project.png" alt="Text extraction and summarization project preview"></a>
-											<div class="inner">
-												<h4>Text Extraction</h4>
-												<p>Developed a PDF text extraction and summarization tool that uses TF-IDF scoring to surface the most important sentences quickly.</p>
-											</div>
-										</article>
-										<article>
-											<a target="_blank" rel="noopener noreferrer" href="https://ejournal.mgi.esdm.go.id/index.php/bomg/article/view/622" class="image"><img src="images/jurnal_ta_project.png" alt="Marine seismic study publication preview"></a>
-											<div class="inner">
-												<h4>Combined Multiple Attenuation Methods and Geological Interpretation : Seram Sea Case Study 2D Marine Seismic Data</h4>
-												<p>Published a marine seismic study combining predictive deconvolution, FK-filtering, SRME, and Radon transform to attenuate multiples and improve interpretation quality.</p>
-											</div>
-										</article>
+				<main id="main">
+					<section id="about" class="hero-section">
+						<div class="container">
+							<div class="hero-grid">
+								<div class="hero-copy reveal">
+									<p class="eyebrow">Said Rasidin</p>
+									<h2>Said Rasidin builds production AI systems.</h2>
+									<p class="lead">He is a Senior Machine Learning Engineer in Jakarta working on machine learning, agentic AI, and data automation systems that move from prototype to production.</p>
+									<div class="hero-actions">
+										<a target="_blank" rel="noopener noreferrer" href="Rasid_CV_2026.pdf" class="button primary icon solid fa-file-pdf">Open CV</a>
+										<a href="mailto:said-rasidin@pm.me" class="button icon solid fa-envelope">Contact</a>
 									</div>
 								</div>
-							</section>
 
+							</div>
 
-					</main>
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; 2026 Said Rasidin. All rights reserved.</li>
-							</ul>
+							<div class="stats-grid" aria-label="Career highlights">
+								<div v-for="stat in stats" :key="stat.label" class="stat-card reveal">
+									<strong>{{ stat.value }}</strong>
+									<span>{{ stat.label }}</span>
+								</div>
+							</div>
+
+							<div class="summary-panel reveal">
+								<p>His work spans recommendation systems, forecasting, conversational AI, vector search, optimization, and cloud data platforms.</p>
+								<p class="last-updated">Last updated: February 2026</p>
+							</div>
 						</div>
 					</section>
 
+					<section id="experience">
+						<div class="container">
+							<div class="section-heading reveal">
+								<p class="eyebrow">Experience</p>
+								<h3>Recent Work</h3>
+							</div>
+
+							<div class="experience-list">
+								<article class="experience-item reveal" v-for="role in experience" :key="role.title + role.company">
+									<p class="experience-year">{{ role.range }}</p>
+									<span class="experience-mark" aria-hidden="true"></span>
+									<div class="experience-content">
+										<header>
+											<div class="experience-logo" :class="{ 'is-fallback': !role.logo }">
+												<img v-if="role.logo" :src="role.logo" :alt="role.logoAlt || role.company + ' logo'" loading="lazy">
+												<span v-else>{{ role.logoText || role.company.charAt(0) }}</span>
+											</div>
+											<div class="experience-heading">
+												<h4>{{ role.title }}</h4>
+												<p class="experience-org"><a :href="role.companyUrl" target="_blank" rel="noopener noreferrer">{{ role.company }}</a></p>
+											</div>
+											<p class="experience-meta">{{ role.period }} | {{ role.location }}</p>
+										</header>
+										<ul>
+											<li v-for="item in role.points" :key="item">{{ item }}</li>
+										</ul>
+									</div>
+								</article>
+							</div>
+						</div>
+					</section>
+
+					<section id="skills">
+						<div class="container">
+							<div class="section-heading reveal">
+								<p class="eyebrow">Capabilities</p>
+								<h3>Skills</h3>
+							</div>
+
+							<div class="skill-grid">
+								<article v-for="skill in skills" :key="skill.title" class="skill-card reveal">
+									<span :class="skill.icon"></span>
+									<h4>{{ skill.title }}</h4>
+									<p>{{ skill.items }}</p>
+								</article>
+							</div>
+						</div>
+					</section>
+
+					<section id="education">
+						<div class="container">
+							<div class="section-heading reveal">
+								<p class="eyebrow">Background</p>
+								<h3>Education</h3>
+							</div>
+
+							<div class="info-panel reveal">
+								<div class="info-logo">
+									<img src="images/logos/unja.png" alt="Universitas Jambi logo" loading="lazy">
+								</div>
+								<div>
+									<h4><a target="_blank" rel="noopener noreferrer" href="https://www.unja.ac.id">Universitas Jambi</a></h4>
+									<p>Bachelor of Engineering in Geophysical Engineering, Aug 2015 - Jan 2020, Jambi, Indonesia.</p>
+									<p>Thesis: Seismic Pre-Stack and Post-Stack Kirchhoff Time Migration.</p>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section id="certifications">
+						<div class="container">
+							<div class="section-heading reveal">
+								<p class="eyebrow">Credentials</p>
+								<h3>Certifications</h3>
+							</div>
+
+							<div class="certification-grid">
+								<a v-for="cert in certifications" :key="cert.name" :href="cert.url" class="certification-card reveal" target="_blank" rel="noopener noreferrer">
+									<div class="certification-logo">
+										<img :src="cert.logo" :alt="cert.logoAlt" loading="lazy">
+									</div>
+									<strong>{{ cert.name }}</strong>
+									<small>{{ cert.period }}</small>
+								</a>
+							</div>
+						</div>
+					</section>
+
+					<section id="project">
+						<div class="container">
+							<div class="section-heading reveal">
+								<p class="eyebrow">Selected Work</p>
+								<h3>Projects</h3>
+							</div>
+
+							<div class="project-grid">
+								<article v-for="project in projects" :key="project.title" class="project-card reveal">
+									<a target="_blank" rel="noopener noreferrer" :href="project.url" class="project-image">
+										<img :src="project.image" :alt="project.alt">
+									</a>
+									<div class="project-body">
+										<span>{{ project.category }}</span>
+										<h4><a target="_blank" rel="noopener noreferrer" :href="project.url">{{ project.title }}</a></h4>
+										<p>{{ project.description }}</p>
+									</div>
+								</article>
+							</div>
+						</div>
+					</section>
+				</main>
+
+				<section id="footer">
+					<div class="container">
+						<ul class="copyright">
+							<li>&copy; 2026 Said Rasidin. All rights reserved.</li>
+						</ul>
+					</div>
+				</section>
 			</div>
+		</div>
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+		<script src="assets/js/site-app.js"></script>
 	</body>
 </html>
