@@ -3767,7 +3767,7 @@ input, select, textarea {
 		--navy-2: #233653;
 		--gold: #d69a2d;
 		--coral: #d96f4d;
-		--sidebar-width: 19.5rem;
+		--sidebar-width: 18rem;
 	}
 
 	html {
@@ -3797,8 +3797,10 @@ input, select, textarea {
 	}
 
 	#main > section > .container {
+		box-sizing: border-box;
 		max-width: 1120px;
 		padding: 2.75rem 2rem;
+		width: 100%;
 	}
 
 	#header {
@@ -3925,16 +3927,22 @@ input, select, textarea {
 			#ffffff;
 	}
 
+		#main > .hero-section > .container {
+			padding-bottom: 2.4rem;
+			padding-top: 3.35rem;
+		}
+
 	.hero-grid {
 		display: block;
-		max-width: 42rem;
+		max-width: 44rem;
 	}
 
 	.hero-copy h2 {
 		font-size: clamp(1.9rem, 2.8vw, 2.65rem);
 		line-height: 1.1;
 		margin: 0 0 0.85rem;
-		max-width: 17ch;
+		max-width: 18ch;
+		overflow-wrap: break-word;
 	}
 
 	.lead {
@@ -3949,6 +3957,13 @@ input, select, textarea {
 		flex-wrap: wrap;
 		gap: 0.8rem;
 		margin-top: 1rem;
+	}
+
+	.contact-note {
+		color: var(--ink-500);
+		font-family: "IBM Plex Mono", Consolas, monospace;
+		font-size: 0.84rem;
+		margin: 0.85rem 0 0;
 	}
 
 	.button,
@@ -3979,6 +3994,7 @@ input, select, textarea {
 	.skill-card,
 	.certification-card,
 	.project-card,
+	.article-card,
 	.stat-card {
 		background: rgba(255, 255, 255, 0.82);
 		border: 1px solid rgba(219, 229, 239, 0.82);
@@ -4017,9 +4033,7 @@ input, select, textarea {
 			display: block;
 			height: auto;
 			object-fit: cover;
-			object-position: 50% 44%;
-			transform: scale(1.42);
-			transform-origin: 50% 44%;
+			object-position: 50% 38%;
 			width: 100%;
 		}
 
@@ -4056,6 +4070,7 @@ input, select, textarea {
 			font-size: 1.32rem;
 			line-height: 1.15;
 			margin-bottom: 0.3rem;
+			overflow-wrap: anywhere;
 		}
 
 		.stat-card span {
@@ -4068,7 +4083,7 @@ input, select, textarea {
 	.summary-panel {
 		border-left: 4px solid var(--gold);
 		border-radius: 8px;
-		margin-top: 0.75rem;
+		margin-top: 1rem;
 		padding: 0.85rem 1rem;
 	}
 
@@ -4231,7 +4246,8 @@ input, select, textarea {
 
 	.skill-grid,
 	.certification-grid,
-	.project-grid {
+	.project-grid,
+	.article-list {
 		display: grid;
 		gap: 1rem;
 	}
@@ -4395,6 +4411,9 @@ input, select, textarea {
 		}
 
 	.project-body {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
 		padding: 1.15rem;
 	}
 
@@ -4423,6 +4442,64 @@ input, select, textarea {
 		.project-body p {
 			font-size: 0.9rem;
 			line-height: 1.65;
+			margin: 0 0 1rem;
+		}
+
+	.project-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin: auto 0 0;
+	}
+
+		.project-tags li {
+			background: #eef8f8;
+			border: 1px solid rgba(14, 116, 144, 0.14);
+			border-radius: 999px;
+			color: var(--accent-dark);
+			font-family: "IBM Plex Mono", Consolas, monospace;
+			font-size: 0.68rem;
+			font-weight: 600;
+			line-height: 1.2;
+			padding: 0.32rem 0.48rem;
+		}
+
+	.article-list {
+		margin-bottom: 1.2rem;
+	}
+
+	.article-card {
+		border-bottom: 0;
+		border-radius: 8px;
+		color: var(--ink-700);
+		display: grid;
+		gap: 0.35rem;
+		grid-template-columns: 6.5rem minmax(0, 1fr);
+		padding: 1rem 1.15rem;
+	}
+
+		.article-card span {
+			color: var(--accent-dark);
+			font-family: "IBM Plex Mono", Consolas, monospace;
+			font-size: 0.76rem;
+			font-weight: 600;
+			line-height: 1.5;
+			padding-top: 0.12rem;
+			text-transform: uppercase;
+		}
+
+		.article-card h4 {
+			color: var(--ink-900);
+			font-size: 1rem;
+			line-height: 1.35;
+			margin: 0;
+		}
+
+		.article-card p {
+			color: var(--ink-500);
+			font-size: 0.88rem;
+			grid-column: 2;
+			line-height: 1.5;
 			margin: 0;
 		}
 
@@ -4433,7 +4510,7 @@ input, select, textarea {
 
 	@media screen and (max-width: 1280px) {
 		:root {
-			--sidebar-width: 18rem;
+			--sidebar-width: 17rem;
 		}
 
 		.skill-grid {
@@ -4491,7 +4568,7 @@ input, select, textarea {
 		}
 
 		.hero-grid {
-			max-width: 38rem;
+			max-width: 40rem;
 		}
 
 		.profile-panel {
@@ -4518,21 +4595,33 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 736px) {
+		html,
+		body,
+		#portfolio-app,
+		#wrapper,
+		#main {
+			max-width: 100%;
+			overflow-x: hidden;
+		}
+
 		#main > section > .container {
+			max-width: 100%;
 			padding: 2rem 1rem;
+			width: 100% !important;
 		}
 
 		.hero-grid {
-			grid-template-columns: 1fr;
+			max-width: 100%;
 		}
 
 		.hero-copy h2 {
-			font-size: 1.9rem;
+			font-size: clamp(1.75rem, 8vw, 1.95rem);
 			max-width: 100%;
 		}
 
 		.lead {
 			font-size: 1rem;
+			max-width: 100%;
 		}
 
 		.profile-panel,
@@ -4543,10 +4632,12 @@ input, select, textarea {
 
 			.profile-panel img {
 				aspect-ratio: 4 / 3;
-				object-position: 50% 40%;
-				transform: scale(1.34);
-				transform-origin: 50% 40%;
+				object-position: 50% 34%;
 			}
+
+		.profile-panel {
+			max-width: 100%;
+		}
 
 		.stats-grid,
 		.skill-grid,
@@ -4606,8 +4697,17 @@ input, select, textarea {
 		}
 
 		.hero-actions .button {
+			justify-content: center;
 			width: 100%;
 		}
+
+		.article-card {
+			grid-template-columns: 1fr;
+		}
+
+			.article-card p {
+				grid-column: auto;
+			}
 	}
 
 /* Dynamic Enhancements */
@@ -4675,6 +4775,7 @@ input, select, textarea {
 	.skill-card,
 	.certification-card,
 	.project-card,
+	.article-card,
 	.stat-card,
 	.info-panel,
 	.profile-panel {
@@ -4685,6 +4786,7 @@ input, select, textarea {
 	.skill-card:hover,
 	.certification-card:hover,
 	.project-card:hover,
+	.article-card:hover,
 	.stat-card:hover,
 	.info-panel:hover {
 		border-color: rgba(15, 118, 110, 0.4);

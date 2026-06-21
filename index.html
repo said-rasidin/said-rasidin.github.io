@@ -77,10 +77,10 @@
 									<p class="lead">He is a Senior Machine Learning Engineer in Jakarta working on machine learning, agentic AI, and data automation systems that move from prototype to production.</p>
 									<div class="hero-actions">
 										<a target="_blank" rel="noopener noreferrer" href="Rasid_CV_2026.pdf" class="button primary icon solid fa-file-pdf">Open CV</a>
-										<a href="mailto:said-rasidin@pm.me" class="button icon solid fa-envelope">Contact</a>
+										<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/said-rasidin/" class="button icon brands fa-linkedin">Contact</a>
 									</div>
+									<p class="contact-note">Email: {{ contactEmail }}</p>
 								</div>
-
 							</div>
 
 							<div class="stats-grid" aria-label="Career highlights">
@@ -91,7 +91,7 @@
 							</div>
 
 							<div class="summary-panel reveal">
-								<p>His work spans recommendation systems, forecasting, conversational AI, vector search, optimization, and cloud data platforms.</p>
+								<p>His work spans recommendation systems, forecasting, conversational AI, vector search, optimization, and cloud data platforms across supply chain, media, and consulting.</p>
 								<p class="last-updated">Last updated: February 2026</p>
 							</div>
 						</div>
@@ -201,9 +201,31 @@
 										<span>{{ project.category }}</span>
 										<h4><a target="_blank" rel="noopener noreferrer" :href="project.url">{{ project.title }}</a></h4>
 										<p>{{ project.description }}</p>
+										<ul class="project-tags" v-if="project.tags && project.tags.length" aria-label="Project technologies">
+											<li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
+										</ul>
 									</div>
 								</article>
 							</div>
+						</div>
+					</section>
+
+					<section id="writing">
+						<div class="container">
+							<div class="section-heading reveal">
+								<p class="eyebrow">Articles</p>
+								<h3>Selected Articles</h3>
+							</div>
+
+							<div class="article-list">
+								<a v-for="article in articles" :key="article.title" :href="article.url" class="article-card reveal" target="_blank" rel="noopener noreferrer">
+									<span>{{ article.date }}</span>
+									<h4>{{ article.title }}</h4>
+									<p>{{ article.topic }}</p>
+								</a>
+							</div>
+
+							<a href="https://said-rasidin.medium.com/" class="button icon brands fa-medium reveal" target="_blank" rel="noopener noreferrer">View Medium</a>
 						</div>
 					</section>
 				</main>

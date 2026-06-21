@@ -6,26 +6,27 @@ createApp({
 			activeSection: 'about',
 			menuOpen: false,
 			scrollProgress: 0,
+			contactEmail: 'said-rasidin [at] pm.me',
 			navItems: [
 				{ id: 'about', label: 'About' },
 				{ id: 'experience', label: 'Experience' },
 				{ id: 'skills', label: 'Skills' },
 				{ id: 'education', label: 'Education' },
 				{ id: 'certifications', label: 'Certifications' },
-				{ id: 'project', label: 'Projects' }
+				{ id: 'project', label: 'Projects' },
+				{ id: 'writing', label: 'Articles' }
 			],
 			socialLinks: [
 				{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/said-rasidin/', icon: 'icon brands fa-linkedin', external: true },
 				{ label: 'GitHub', href: 'https://www.github.com/said-rasidin/', icon: 'icon brands fa-github', external: true },
 				{ label: 'Medium', href: 'https://said-rasidin.medium.com/', icon: 'icon brands fa-medium', external: true },
-				{ label: 'CV', href: 'Rasid_CV_2026.pdf', icon: 'icon solid fa-file-pdf', external: true },
-				{ label: 'Email', href: 'mailto:said-rasidin@pm.me', icon: 'icon solid fa-envelope', external: false }
+				{ label: 'CV', href: 'Rasid_CV_2026.pdf', icon: 'icon solid fa-file-pdf', external: true }
 			],
 			stats: [
-				{ value: '5+', label: 'Years in data and ML roles' },
-				{ value: 'AI agents', label: 'NL2SQL and chat-with-data delivery' },
-				{ value: '95% -> 20%', label: 'Recommendation CPU reduction' },
-				{ value: '2h -> 15m', label: 'NLP pipeline speed-up' }
+				{ value: '5+ years', label: 'Data and ML delivery' },
+				{ value: 'Agents', label: 'NL2SQL and chat-with-data delivery' },
+				{ value: 'Recommendation System', label: 'Search, ranking, and personalization' },
+				{ value: 'Demand Forecasting', label: 'Forecasting and inventory analytics' }
 			],
 			experience: [
 				{
@@ -131,14 +132,14 @@ createApp({
 				}
 			],
 			skills: [
-				{ title: 'Programming', icon: 'icon solid fa-code', items: 'Python, SQL, Git, software engineering fundamentals' },
-				{ title: 'ML and AI', icon: 'icon solid fa-microchip', items: 'Machine learning, deep learning, PyTorch, LLM workflows' },
-				{ title: 'Data Platforms', icon: 'icon solid fa-cogs', items: 'Airflow, BigQuery, Metabase, Microsoft Fabric' },
-				{ title: 'Backend', icon: 'icon solid fa-server', items: 'FastAPI, Docker, API orchestration, batch inference' },
-				{ title: 'Cloud', icon: 'icon solid fa-cloud', items: 'Azure AI, GCP Vertex AI, Cloud Run, AWS EC2, S3, Athena' },
-				{ title: 'Optimization', icon: 'icon solid fa-project-diagram', items: 'Pyomo, Lingo, scheduling, inventory logic, forecasting' },
-				{ title: 'Product Delivery', icon: 'icon solid fa-chart-line', items: 'Automation, analytics, stakeholder communication, measurable impact' },
-				{ title: 'Languages', icon: 'icon solid fa-language', items: 'Indonesian, English (C1 Advanced)' }
+				{ title: 'Programming and Backend', icon: 'icon solid fa-code', items: 'Python, SQL, Git, FastAPI, Docker, API orchestration' },
+				{ title: 'ML and Deep Learning', icon: 'icon solid fa-microchip', items: 'PyTorch, BERT, HiDEC, few-shot learning, forecasting models' },
+				{ title: 'Agentic AI and LLMs', icon: 'icon solid fa-comments', items: 'Azure AI Foundry, AI Search, Dify, Microsoft Agent Framework, Agentic RAG' },
+				{ title: 'Data Platforms', icon: 'icon solid fa-cogs', items: 'Airflow, BigQuery, Microsoft Fabric, Databricks, Metabase' },
+				{ title: 'Search and Recommendations', icon: 'icon solid fa-search', items: 'Qdrant, embeddings, vector search, caching, personalization systems' },
+				{ title: 'Cloud Infrastructure', icon: 'icon solid fa-cloud', items: 'GCP Vertex AI, Cloud Run, GCS; AWS EC2, Athena, S3, MWAA' },
+				{ title: 'Optimization and Analytics', icon: 'icon solid fa-project-diagram', items: 'Pyomo, Lingo, heuristic algorithms, inventory logic, dashboards' },
+				{ title: 'Communication and Languages', icon: 'icon solid fa-language', items: 'Clear communication, mentoring, Indonesian, English (C1 Advanced)' }
 			],
 			certifications: [
 				{
@@ -163,6 +164,32 @@ createApp({
 					logoAlt: 'Databricks logo'
 				}
 			],
+			articles: [
+				{
+					title: 'Supercharge AI Agent Development with Model Context Protocol',
+					url: 'https://medium.com/data-science-indo/supercharge-ai-agent-development-with-model-context-protocol-ef73f404b9a3',
+					date: 'May 2025',
+					topic: 'MCP, AI agents, MongoDB, VS Code'
+				},
+				{
+					title: 'Mari Mencoba AI Lokal: Sahabat AI',
+					url: 'https://medium.com/data-science-indo/mari-mencoba-ai-lokal-sahabat-ai-b9f992815551',
+					date: 'Nov 2024',
+					topic: 'Ollama, LLMs, Indonesian AI models'
+				},
+				{
+					title: 'AI Agent with Gemini Function Calling',
+					url: 'https://said-rasidin.medium.com/ai-agent-with-gemini-function-calling-c32bf38bae87',
+					date: 'May 2024',
+					topic: 'Gemini, BigQuery, tool calling'
+				},
+				{
+					title: 'BigQuery Meets LLM: Unlocking New Frontiers in AI-Driven Data Analytics',
+					url: 'https://said-rasidin.medium.com/bigquery-meets-llm-unlocking-new-frontiers-in-ai-driven-data-analytics-bd332e30c7cc',
+					date: 'Dec 2023',
+					topic: 'BigQuery, LLMs, retrieval workflows'
+				}
+			],
 			projects: [
 				{
 					title: 'Few-Shot Image Classification With JAKI Report Images',
@@ -170,7 +197,8 @@ createApp({
 					image: 'images/few-shot-jsc.png',
 					alt: 'Few-shot image classification project preview',
 					url: 'https://medium.com/jakartasmartcity/few-shot-image-classification-with-jaki-report-images-68128813f003',
-					description: 'Built a few-shot image classification approach for JAKI report images to reduce manual categorization and provide category recommendations.'
+					description: 'Built a few-shot image classification approach for JAKI report images to reduce manual categorization and provide category recommendations.',
+					tags: ['Computer Vision', 'Few-shot', 'API']
 				},
 				{
 					title: 'Random Forest and ANN Model with Oversampling Data',
@@ -178,7 +206,8 @@ createApp({
 					image: 'images/RF-ANN.png',
 					alt: 'Random Forest and ANN project preview',
 					url: 'https://medium.com/analytics-vidhya/random-forest-and-ann-model-with-oversampling-data-b7adde23e55f',
-					description: 'Compared Random Forest and ANN models on imbalanced data using SMOTE to evaluate oversampling effects on classification performance.'
+					description: 'Compared Random Forest and ANN models on imbalanced data using SMOTE to evaluate oversampling effects on classification performance.',
+					tags: ['Python', 'SMOTE', 'ANN']
 				},
 				{
 					title: 'Drone Aerial View Segmentation',
@@ -186,7 +215,8 @@ createApp({
 					image: 'images/drone_project.png',
 					alt: 'Drone aerial segmentation project preview',
 					url: 'https://medium.com/@saidr567/drone-aerial-view-segmentation-44046ff003b5',
-					description: 'Explored high-resolution aerial image segmentation for drone imagery and transfer learning limitations in bird-eye-view data.'
+					description: 'Explored high-resolution aerial image segmentation for drone imagery and transfer learning limitations in bird-eye-view data.',
+					tags: ['Segmentation', 'Transfer Learning', 'Aerial']
 				},
 				{
 					title: 'Semantic Segmentation in Seismic Images',
@@ -194,7 +224,8 @@ createApp({
 					image: 'images/seismic_project.png',
 					alt: 'Semantic segmentation in seismic images preview',
 					url: 'https://medium.com/analytics-vidhya/semantic-segmentation-in-seismic-images-70cde2175f01',
-					description: 'Applied U-Net with ResNet backbones to delineate salt bodies in seismic images and support subsurface interpretation.'
+					description: 'Applied U-Net with ResNet backbones to delineate salt bodies in seismic images and support subsurface interpretation.',
+					tags: ['U-Net', 'ResNet', 'Geoscience']
 				},
 				{
 					title: 'Mineral Image Classification',
@@ -202,7 +233,8 @@ createApp({
 					image: 'images/mineral_project.png',
 					alt: 'Mineral image classification project preview',
 					url: 'https://medium.com/@saidr567/mineral-klasifikasi-menggunakan-deep-learning-373cea77694b',
-					description: 'Trained a deep learning model to classify seven mineral classes and evaluated robustness across varied samples.'
+					description: 'Trained a deep learning model to classify seven mineral classes and evaluated robustness across varied samples.',
+					tags: ['Deep Learning', 'Classification', 'Images']
 				},
 				{
 					title: 'COVID-19 Early Detection from X-Ray Images',
@@ -210,7 +242,8 @@ createApp({
 					image: 'images/covid19_project.png',
 					alt: 'COVID-19 X-ray detection project preview',
 					url: 'https://medium.com/jovianml/covid-19-early-detection-from-x-ray-images-aided-by-ai-e4642d514323',
-					description: 'Built an AI-assisted X-ray classification workflow for faster COVID-19 screening in high-volume testing scenarios.'
+					description: 'Built an AI-assisted X-ray classification workflow for faster COVID-19 screening in high-volume testing scenarios.',
+					tags: ['CNN', 'Healthcare', 'X-Ray']
 				},
 				{
 					title: 'Sentiment Analysis COVID-19',
@@ -218,7 +251,8 @@ createApp({
 					image: 'images/sentiment_project.png',
 					alt: 'Sentiment analysis project preview',
 					url: 'https://github.com/said-rasidin/ML_Project/tree/master/Sentiment%20Analysis%20Covid-19',
-					description: 'Built a sentiment classification pipeline for COVID-19 tweets to analyze public opinion trends from social media data.'
+					description: 'Built a sentiment classification pipeline for COVID-19 tweets to analyze public opinion trends from social media data.',
+					tags: ['NLP', 'Classification', 'Social Data']
 				},
 				{
 					title: 'Text Extraction and Summarization',
@@ -226,7 +260,8 @@ createApp({
 					image: 'images/text_sum_project.png',
 					alt: 'Text extraction and summarization project preview',
 					url: 'https://github.com/said-rasidin/ML_Project/tree/master/Text%20Extraction',
-					description: 'Developed a PDF text extraction and summarization tool using TF-IDF scoring to surface important sentences quickly.'
+					description: 'Developed a PDF text extraction and summarization tool using TF-IDF scoring to surface important sentences quickly.',
+					tags: ['TF-IDF', 'PDF', 'Summarization']
 				},
 				{
 					title: 'Seram Sea Marine Seismic Study',
@@ -234,7 +269,8 @@ createApp({
 					image: 'images/jurnal_ta_project.png',
 					alt: 'Marine seismic study publication preview',
 					url: 'https://ejournal.mgi.esdm.go.id/index.php/bomg/article/view/622',
-					description: 'Published a marine seismic study combining multiple attenuation methods to improve seismic interpretation quality.'
+					description: 'Published a marine seismic study combining multiple attenuation methods to improve seismic interpretation quality.',
+					tags: ['Publication', 'Seismic', 'Geology']
 				}
 			]
 		};
@@ -301,8 +337,7 @@ createApp({
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('is-visible');
-					} else {
-						entry.target.classList.remove('is-visible');
+						revealObserver.unobserve(entry.target);
 					}
 				});
 			}, {
