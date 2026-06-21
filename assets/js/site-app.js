@@ -20,7 +20,7 @@ createApp({
 				{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/said-rasidin/', icon: 'icon brands fa-linkedin', external: true },
 				{ label: 'GitHub', href: 'https://www.github.com/said-rasidin/', icon: 'icon brands fa-github', external: true },
 				{ label: 'Medium', href: 'https://said-rasidin.medium.com/', icon: 'icon brands fa-medium', external: true },
-				{ label: 'CV', href: 'Rasid_CV_2026.pdf', icon: 'icon solid fa-file-pdf', external: true }
+				{ label: 'CV', href: 'Rasid_CV_2026.pdf?v=20260621', icon: 'icon solid fa-file-pdf', external: true }
 			],
 			stats: [
 				{ value: '5+ years', label: 'Data and ML delivery' },
