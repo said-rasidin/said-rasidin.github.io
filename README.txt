@@ -32,3 +32,16 @@ Credits:
 		jQuery (jquery.com)
 		Scrollex (github.com/ajlkn/jquery.scrollex)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+Portfolio maintenance
+---------------------
+This GitHub Pages portfolio is static: edit index.html directly. The small
+assets/js/site-app.js script enhances navigation; the content also works
+without JavaScript. No build or package installation is required.
+
+To preview locally, run: python3 -m http.server 8000
+Then visit http://localhost:8000.
+
+Keep private CVs outside this repository. The Request CV link directs visitors
+to LinkedIn. Removing a PDF from the current source does not remove copies in
+Git history, previous deployments, search caches, or visitors' downloads.
