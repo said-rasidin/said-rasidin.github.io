@@ -440,42 +440,65 @@
 									Skills
 								</h3>
 							</div>
-							<div class="skill-pyramid" aria-label="Skills, from specializations at the top to foundations at the bottom">
-								<article class="skill-tier skill-tier-specializations">
-									<h4>Specializations</h4>
-									<ul class="skill-topics" aria-label="Applied AI capabilities">
-										<li>Machine learning</li>
-										<li>Recommendations</li>
-										<li>Agentic AI</li>
-										<li>Forecasting</li>
-									</ul>
-								</article>
-								<article class="skill-tier skill-tier-models">
-									<h4>Models &amp; retrieval</h4>
-									<dl class="skill-clusters">
-										<div><dt>ML &amp; deep learning</dt><dd>PyTorch, BERT, HiDEC, few-shot learning</dd></div>
-										<div><dt>Search &amp; personalization</dt><dd>Qdrant, embeddings, vector search, caching</dd></div>
-									</dl>
-								</article>
-								<article class="skill-tier skill-tier-platforms">
-									<h4>Data &amp; delivery</h4>
-									<dl class="skill-clusters">
-										<div><dt>LLM platforms</dt><dd>AWS Bedrock, Azure AI Foundry, AI Search, Dify, Microsoft Agent Framework, Agentic RAG</dd></div>
-										<div><dt>Backend &amp; tooling</dt><dd>FastAPI, Docker, Git, API orchestration</dd></div>
-										<div><dt>Data platforms</dt><dd>Airflow, BigQuery, Microsoft Fabric, Databricks</dd></div>
-										<div><dt>Cloud infrastructure</dt><dd>GCP: Vertex AI, Cloud Run, GCS · AWS: EC2, Athena, S3, MWAA</dd></div>
-									</dl>
-								</article>
-								<article class="skill-tier skill-tier-foundations">
-									<h4>Foundations</h4>
-									<dl class="skill-clusters">
-										<div class="skill-cluster-languages"><dt>Programming languages</dt><dd>Python · SQL</dd></div>
-										<div><dt>Algorithms</dt><dd>Heuristic algorithms, optimization with Pyomo &amp; Lingo</dd></div>
-										<div><dt>Analytics</dt><dd>Inventory analytics, dashboards, Metabase</dd></div>
+							<div class="skill-layout">
+								<fieldset class="skill-pyramid">
+									<legend>Select a skill level</legend>
+									<label><input type="radio" name="skill-level" aria-controls="skill-panel-1" checked><span>Specializations</span></label>
+									<label><input type="radio" name="skill-level" aria-controls="skill-panel-2"><span>Models &amp; retrieval</span></label>
+									<label><input type="radio" name="skill-level" aria-controls="skill-panel-3"><span>Data &amp; delivery</span></label>
+									<label><input type="radio" name="skill-level" aria-controls="skill-panel-4"><span>Foundations</span></label>
+								</fieldset>
+								<div class="skill-panels">
+									<article id="skill-panel-1">
+										<h4>Specializations</h4>
+										<p class="skill-description">Problems I solve with AI and analytics.</p>
+										<ul class="skill-topics" aria-label="Applied AI and analytics capabilities">
+											<li>Conversational AI &amp; analytics agents</li>
+											<li>Recommendations &amp; personalization</li>
+											<li>Search &amp; content classification</li>
+											<li>Demand forecasting</li>
+											<li>Inventory analytics &amp; production scheduling</li>
+										</ul>
+									</article>
+									<article id="skill-panel-2">
+										<h4>Models &amp; retrieval</h4>
+										<p class="skill-description">How I build models, retrieve information, and orchestrate AI agents.</p>
+										<dl class="skill-clusters">
+											<div><dt>Classification &amp; entity extraction</dt><dd>PyTorch, HiDEC, BERT, few-shot learning</dd></div>
+											<div><dt>Demand forecasting models</dt><dd>XGBoost, LightGBM</dd></div>
+											<div><dt>Model &amp; LLM platforms</dt><dd>AWS Bedrock, Azure AI Foundry, Vertex AI</dd></div>
+											<div><dt>Agent frameworks &amp; tools</dt><dd>Strands Agents SDK, Microsoft Agent Framework, Hermes Agent, Dify</dd></div>
+											<div><dt>Search &amp; RAG</dt><dd>Embeddings, cosine similarity, vector search, Qdrant, Azure AI Search, agentic RAG</dd></div>
+										</dl>
+									</article>
+									<article id="skill-panel-3">
+										<h4>Data &amp; delivery</h4>
+										<p class="skill-description">How I process data and deliver APIs and dashboards.</p>
+										<dl class="skill-clusters">
+											<div><dt>Data platforms &amp; SQL analytics</dt><dd>BigQuery, Databricks, Amazon Athena, Microsoft Fabric</dd></div>
+											<div><dt>Data pipelines &amp; storage</dt><dd>Batch inference with Apache Airflow, Amazon MWAA, Google Cloud Storage (GCS), Amazon S3</dd></div>
+											<div><dt>Containers &amp; backend deployment</dt><dd>Docker, Cloud Run, Amazon EC2, FastAPI, API orchestration, caching</dd></div>
+											<div><dt>Dashboards</dt><dd>Amazon QuickSight, Databricks, Metabase</dd></div>
+										</dl>
+									</article>
+									<article id="skill-panel-4">
+										<h4>Foundations</h4>
+										<p class="skill-description">Programming, algorithms, and tools I use across projects.</p>
+										<dl class="skill-clusters">
+											<div><dt>Programming languages</dt><dd>Python, SQL</dd></div>
+											<div><dt>Algorithms &amp; optimization</dt><dd>Heuristic algorithms and production scheduling with Pyomo and Lingo</dd></div>
+											<div><dt>Version control</dt><dd>Git</dd></div>
+										</dl>
+									</article>
+								</div>
+								<article class="skill-communication">
+									<h4><span class="fas fa-comments" aria-hidden="true"></span>Communication &amp; mentoring</h4>
+									<dl class="skill-languages">
+										<dt>Languages</dt>
+										<dd><span>Indonesian</span><span>English (C1 Advanced)</span></dd>
 									</dl>
 								</article>
 							</div>
-							<p class="skills-note">Communication &amp; mentoring · Indonesian · English (C1 Advanced)</p>
 						</div>
 					</section>
 					<section id="education">
